@@ -1,8 +1,8 @@
 [package]
-authors = ["dillionnason <nasond432@gmail.com>"]
+authors = ["dillionnason"]
 edition = "2018"
 readme = "README.md"
-name = "ece-471-final"
+name = "stm32-controller-driver"
 version = "0.1.0"
 
 [dependencies]
@@ -11,10 +11,15 @@ cortex-m-rt = "0.6.10"
 cortex-m-semihosting = "0.3.3"
 panic-halt = "0.2.0"
 panic-semihosting = "0.5.0"
+nb = "0.1.1"
 
 [dependencies.stm32l4xx-hal]
 version = "0.7.1"
-features = ["stm32l476", "rt"]
+features = ["rt", "stm32l476"]
+
+[dependencies.embedded-hal]
+version = "0.2.6"
+features = ["unproven"]
 
 # Uncomment for the panic example.
 # panic-itm = "0.4.1"
@@ -31,7 +36,7 @@ features = ["stm32l476", "rt"]
 
 # this lets you use `cargo fix`!
 [[bin]]
-name = "ece-471-final"
+name = "stm32-controller-driver"
 test = false
 bench = false
 
